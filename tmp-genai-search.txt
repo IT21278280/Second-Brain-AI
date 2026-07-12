@@ -1,0 +1,741 @@
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:852:    maximumRemoteCalls?: number;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:853:    /** If automatic function calling is enabled,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:854:     whether to ignore call history to the response.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:855:     If not set, SDK will set ignore_call_history to false,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:856:     and will append the call history to
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:857:     GenerateContentResponse.automatic_function_calling_history.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:858:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:859:    ignoreCallHistory?: boolean;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:860:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:861:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:862:/** Autorater config used for evaluation. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:975:     * @param params - The parameters for create embedding batch job request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:976:     * @return The created batch job.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:977:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:978:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:979:     * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:980:     * const response = await ai.batches.createEmbeddings({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:981:     *   model: 'text-embedding-004',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:982:     *   src: {fileName: 'files/my_embedding_input'},
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:983:     * });
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:984:     * console.log(response);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:985:     * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:986:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:987:    createEmbeddings: (params: types.CreateEmbeddingsBatchJobParameters) => Promise<types.BatchJob>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:988:    private createInlinedGenerateContentRequest;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:989:    private getGcsUri;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:990:    private getBigqueryUri;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:991:    private formatDestination;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:992:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:993:     * Internal method to create batch job.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1002:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1003:     * @param params - The parameters for create batch job request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1004:     * @return The created batch job.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1005:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1006:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1007:    private createEmbeddingsInternal;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1008:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1009:     * Gets batch job configurations.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1010:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1011:     * @param params - The parameters for the get request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1012:     * @return The batch job.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1097:    /** The BigQuery URI to the output table.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1098:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1099:    bigqueryUri?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1100:    /** The Gemini Developer API's file resource name of the output data
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1101:     (e.g. "files/12345"). The file will be a JSONL file with a single response
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1102:     per line. The responses will be GenerateContentResponse messages formatted
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1103:     as JSON. The responses will be written in the same order as the input
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1104:     requests.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1105:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1106:    fileName?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1107:    /** The responses to the requests in the batch. Returned when the batch was
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1155:    vertexDatasetName?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1156:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1157:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1158:export declare type BatchJobSourceUnion = BatchJobSource | InlinedRequest[] | string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1159:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1160:/** Specifies the function Behavior. If not specified, the system keeps the current function call behavior. This field is currently only supported by the BidiGenerateContent method. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1161:export declare enum Behavior {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1162:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1163:     * This value is unspecified.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1164:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1165:    UNSPECIFIED = "UNSPECIFIED",
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1497:    private readonly modelsModule;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1498:    private readonly model;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1499:    private readonly config;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1500:    private history;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1501:    private sendPromise;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1502:    constructor(apiClient: ApiClient, modelsModule: Models, model: string, config?: types.GenerateContentConfig, history?: types.Content[]);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1503:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1504:     * Sends a message to the model and returns the response.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1505:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1506:     * @remarks
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1507:     * This method will wait for the previous message to be processed before
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1518:     *   message: 'Why is the sky blue?'
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1519:     * });
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1520:     * console.log(response.text);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1521:     * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1522:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1523:    sendMessage(params: types.SendMessageParameters): Promise<types.GenerateContentResponse>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1524:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1525:     * Sends a message to the model and returns the response in chunks.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1526:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1527:     * @remarks
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1528:     * This method will wait for the previous message to be processed before
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1541:     * for await (const chunk of response) {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1542:     *   console.log(chunk.text);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1543:     * }
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1544:     * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1545:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1546:    sendMessageStream(params: types.SendMessageParameters): Promise<AsyncGenerator<types.GenerateContentResponse>>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1547:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1548:     * Returns the chat history.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1549:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1550:     * @remarks
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1551:     * The history is a list of contents alternating between user and model.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1903:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1904:    values?: number[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1905:    /** Gemini Enterprise Agent Platform only. Statistics of the input text associated with this
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1906:     embedding.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1907:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1908:    statistics?: ContentEmbeddingStatistics;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1909:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1910:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1911:/** Statistics of the input text associated with the result of content embedding. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1912:export declare interface ContentEmbeddingStatistics {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1913:    /** Gemini Enterprise Agent Platform only. If the input text was truncated due to having
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1914:     a length longer than the allowed maximum input.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1915:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1916:    truncated?: boolean;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:1917:    /** Gemini Enterprise Agent Platform only. Number of tokens of the input text.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2298:    /** Config for the entire chat session.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2299:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2300:     This config applies to all requests within the session
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2301:     unless overridden by a per-request `config` in `SendMessageParameters`.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2302:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2303:    config?: GenerateContentConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2304:    /** The initial conversation history for the chat session.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2305:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2306:     This allows you to start the chat with a pre-existing history. The history
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2307:     must be a list of `Content` alternating between 'user' and 'model' roles.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2308:     It should start with a 'user' message.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2309:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2310:    history?: Content[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2311:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2312:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2313:/** Config for optional parameters. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2314:export declare interface CreateEmbeddingsBatchJobConfig {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2315:    /** Used to override HTTP request options. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2316:    httpOptions?: HttpOptions;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2317:    /** Abort signal which can be used to cancel the request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2318:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2319:     NOTE: AbortSignal is a client-only operation. Using it to cancel an
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2325:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2326:    displayName?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2327:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2328:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2329:/** Config for batches.create parameters. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2330:export declare interface CreateEmbeddingsBatchJobParameters {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2331:    /** The name of the model to produces the predictions via the BatchJob.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2332:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2333:    model?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2334:    /** input data to run batch job".
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2335:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2336:    src: EmbeddingsBatchJobSource;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2337:    /** Optional parameters for creating a BatchJob.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2338:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2339:    config?: CreateEmbeddingsBatchJobConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2340:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2341:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2342:/** Used to override the default configuration. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2343:export declare interface CreateFileConfig {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:2344:    /** Used to override HTTP request options. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3506:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3507:/** Response for the embed_content method. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3508:export declare class EmbedContentResponse {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3509:    /** Used to retain the full HTTP response. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3510:    sdkHttpResponse?: HttpResponse;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3511:    /** The embeddings for each request, in the same order as provided in
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3512:     the batch request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3513:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3514:    embeddings?: ContentEmbedding[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3515:    /** Gemini Enterprise Agent Platform only. Metadata about the request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3516:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3517:    metadata?: EmbedContentMetadata;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3518:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3519:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3527:     * embedContent API Endpoint
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3528:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3529:    EMBED_CONTENT = "EMBED_CONTENT"
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3530:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3531:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3532:export declare interface EmbeddingsBatchJobSource {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3533:    /** The Gemini Developer API's file resource name of the input data
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3534:     (e.g. "files/12345").
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3535:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3536:    fileName?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:3537:    /** The Gemini Developer API's inlined input data to run batch job.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4540:    parametersJsonSchema?: unknown;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4541:    /** Optional. Describes the output from this function in JSON Schema format. Reflects the Open API 3.03 Response Object. The Schema defines the type used for the response value of the function. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4542:    response?: Schema;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4543:    /** Optional. Describes the output from this function in JSON Schema format. The value specified by the schema is the response value of the function. This field is mutually exclusive with `response`. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4544:    responseJsonSchema?: unknown;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4545:    /** Optional. Specifies the function Behavior. If not specified, the system keeps the current function call behavior. This field is currently only supported by the BidiGenerateContent method. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4546:    behavior?: Behavior;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4547:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4548:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4549:/** The result output from a FunctionCall that contains a string representing the FunctionDeclaration.name and a structured JSON object containing any output from the function is used as context to the model. This should contain the result of a `FunctionCall` made based on model prediction. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4550:export declare class FunctionResponse {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4567:    /** Required. The IANA standard MIME type of the source data. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4568:    mimeType?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4569:    /** Required. Raw bytes.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4570:     * @remarks Encoded as base64 string. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4571:    data?: string;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4572:    /** Optional. Display name of the blob. Used to provide a label or filename to distinguish blobs. This field is only returned in PromptMessage for prompt management. It is currently used in the Gemini GenerateContent calls only when server side tools (code_execution, google_search, and url_context) are enabled. This field is not supported in Gemini API. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4573:    displayName?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4574:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4575:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4576:/** URI based data for function response. This data type is not supported in Gemini API. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4577:export declare class FunctionResponseFileData {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4578:    /** Required. URI. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4579:    fileUri?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4580:    /** Required. The IANA standard MIME type of the source data. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4581:    mimeType?: string;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4582:    /** Optional. Display name of the file data. Used to provide a label or filename to distinguish file datas. This field is only returned in PromptMessage for prompt management. It is currently used in the Gemini GenerateContent calls only when server side tools (code_execution, google_search, and url_context) are enabled. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4583:    displayName?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4584:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4585:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4586:/** A datatype containing media that is part of a `FunctionResponse` message. A `FunctionResponsePart` consists of data which has an associated datatype. A `FunctionResponsePart` can only contain one of the accepted types in `FunctionResponsePart.data`. A `FunctionResponsePart` must have a fixed IANA MIME type identifying the type and subtype of the media if the `inline_data` field is filled with raw bytes. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4587:export declare class FunctionResponsePart {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4695:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4696:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4697:declare class GeminiNextGenAgents {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4698:    private readonly parentClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4699:    private sdk;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4700:    constructor(parentClient: GoogleGenAIParentClient);
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4701:    create(params?: CreateAgentParams | null | undefined, options?: GoogleGenAIRequestOptions): Promise<agents.Agent>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4702:    list(params?: ListAgentsParams | null | undefined, options?: GoogleGenAIRequestOptions): Promise<agents.AgentListResponse>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4703:    get(id: string, params?: GetAgentParams | null | undefined, options?: GoogleGenAIRequestOptions): Promise<agents.Agent>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4704:    delete(id: string, params?: DeleteAgentParams | null | undefined, options?: GoogleGenAIRequestOptions): Promise<interactions.Empty>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4705:    private getClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4706:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4707:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4708:declare class GeminiNextGenInteractions {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4709:    private readonly parentClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4710:    private sdk;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4711:    constructor(parentClient: GoogleGenAIParentClient);
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4712:    create(params: CreateModelInteractionParamsNonStreaming, options?: GoogleGenAIRequestOptions): Promise<GoogleGenAIInteraction>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4713:    create(params: CreateAgentInteractionParamsNonStreaming, options?: GoogleGenAIRequestOptions): Promise<GoogleGenAIInteraction>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4714:    create(params: CreateModelInteractionParamsStreaming, options?: GoogleGenAIRequestOptions): Promise<Stream<GoogleGenAIInteractionSSEEvent>>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4715:    create(params: CreateAgentInteractionParamsStreaming, options?: GoogleGenAIRequestOptions): Promise<Stream<GoogleGenAIInteractionSSEEvent>>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4716:    create(params: InteractionCreateParamsStreaming, options?: GoogleGenAIRequestOptions): Promise<Stream<GoogleGenAIInteractionSSEEvent>>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4717:    create(params: InteractionCreateParamsNonStreaming, options?: GoogleGenAIRequestOptions): Promise<GoogleGenAIInteraction>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4718:    create(params: InteractionCreateParams, options?: GoogleGenAIRequestOptions): Promise<GoogleGenAIInteraction | Stream<GoogleGenAIInteractionSSEEvent>>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4719:    get(id: string, params?: InteractionGetParamsNonStreaming | null, options?: GoogleGenAIRequestOptions): Promise<GoogleGenAIInteraction>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4720:    get(id: string, params: InteractionGetParamsStreaming, options?: GoogleGenAIRequestOptions): Promise<Stream<GoogleGenAIInteractionSSEEvent>>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4721:    get(id: string, params?: InteractionGetParams | null, options?: GoogleGenAIRequestOptions): Promise<GoogleGenAIInteraction | Stream<GoogleGenAIInteractionSSEEvent>>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4722:    delete(id: string, params?: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4723:        api_version?: string;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4724:    } | null | undefined, options?: GoogleGenAIRequestOptions): Promise<unknown>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4725:    cancel(id: string, params?: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4726:        api_version?: string;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4727:    } | null | undefined, options?: GoogleGenAIRequestOptions): Promise<GoogleGenAIInteraction>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4728:    private getClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4729:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4730:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4731:declare class GeminiNextGenWebhooks {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4732:    private readonly parentClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4733:    private sdk;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4734:    constructor(parentClient: GoogleGenAIParentClient);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4735:    create(params: webhooks.WebhookInput & {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4736:        api_version?: string;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4737:    }, options?: GoogleGenAIRequestOptions): Promise<webhooks.Webhook>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4738:    list(params?: WebhookListParams | null | undefined, options?: GoogleGenAIRequestOptions): Promise<webhooks.WebhookListResponse>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4739:    get(id: string, params?: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4740:        api_version?: string;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4741:    } | null | undefined, options?: GoogleGenAIRequestOptions): Promise<webhooks.Webhook>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4742:    update(id: string, params?: WebhookUpdateParams | null | undefined, options?: GoogleGenAIRequestOptions): Promise<webhooks.Webhook>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4743:    delete(id: string, params?: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4744:        api_version?: string;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4745:    } | null | undefined, options?: GoogleGenAIRequestOptions): Promise<interactions.Empty>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4746:    rotateSigningSecret(id: string, params?: WebhookRotateSigningSecretParams | null | undefined, options?: GoogleGenAIRequestOptions): Promise<webhooks.WebhookRotateSigningSecretResponse>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4747:    ping(id: string, params?: WebhookPingParams | null | undefined, options?: GoogleGenAIRequestOptions): Promise<webhooks.WebhookPingResponse>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4748:    private getClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4749:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4750:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4751:/** Input example for preference optimization. This data type is not supported in Gemini API. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4752:export declare interface GeminiPreferenceExample {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4766:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4767:/** Optional model configuration parameters.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4768:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4769: For more information, see `Content generation parameters
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4770: <https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/content-generation-parameters>`_. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4771:export declare interface GenerateContentConfig {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4772:    /** Used to override HTTP request options. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4773:    httpOptions?: HttpOptions;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4774:    /** Abort signal which can be used to cancel the request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4775:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4776:     NOTE: AbortSignal is a client-only operation. Using it to cancel an
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4926:    /** The service tier to use for the request. For example, ServiceTier.FLEX. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4927:    serviceTier?: ServiceTier;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4928:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4929:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4930:/** Config for models.generate_content parameters. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4931:export declare interface GenerateContentParameters {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4932:    /** ID of the model to use. For a list of models, see `Google models
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4933:     <https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models>`_. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4934:    model: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4935:    /** Content of the request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4936:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4937:    contents: ContentListUnion;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4938:    /** Configuration that contains optional model parameters.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4939:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4940:    config?: GenerateContentConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4941:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4942:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4943:/** Response message for PredictionService.GenerateContent. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4944:export declare class GenerateContentResponse {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4945:    /** Used to retain the full HTTP response. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4946:    sdkHttpResponse?: HttpResponse;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4947:    /** Response variations returned by the model.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4948:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4949:    candidates?: Candidate[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4954:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4955:    automaticFunctionCallingHistory?: Content[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4956:    /** Output only. The model version used to generate the response. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4957:    modelVersion?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4958:    /** Output only. Content filter results for a prompt sent in the request. Note: Sent only in the first stream chunk. Only happens when no candidates were generated due to content violations. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4959:    promptFeedback?: GenerateContentResponsePromptFeedback;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4960:    /** Output only. response_id is used to identify each response. It is the encoding of the event_id. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4961:    responseId?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4962:    /** Usage metadata about the response(s). */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4963:    usageMetadata?: GenerateContentResponseUsageMetadata;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4964:    /** Output only. The current model status of this model. This field is not supported in Vertex AI. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4965:    modelStatus?: ModelStatus;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4966:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4967:     * Returns the concatenation of all text parts from the first candidate in the response.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4968:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4974:     * If there are thought parts in the response, the concatenation of all text
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4975:     * parts excluding the thought parts will be returned.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4976:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4977:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4978:     * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4979:     * const response = await ai.models.generateContent({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4980:     *   model: 'gemini-2.0-flash',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4981:     *   contents:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4982:     *     'Why is the sky blue?',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4983:     * });
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:4984:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5024:     *         'Color temperature of the light fixture which can be `daylight`, `cool` or `warm`.',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5025:     *     },
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5026:     *   },
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5027:     *   required: ['brightness', 'colorTemperature'],
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5028:     *  };
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5029:     *  const response = await ai.models.generateContent({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5030:     *     model: 'gemini-2.0-flash',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5031:     *     contents: 'Dim the lights so the room feels cozy and warm.',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5032:     *     config: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5033:     *       tools: [{functionDeclarations: [controlLightFunctionDeclaration]}],
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5034:     *       toolConfig: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5052:     * If there are no executable code in the response, undefined will be
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5053:     * returned.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5054:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5055:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5056:     * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5057:     * const response = await ai.models.generateContent({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5058:     *   model: 'gemini-2.0-flash',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5059:     *   contents:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5060:     *     'What is the sum of the first 50 prime numbers? Generate and run code for the calculation, and make sure you get all 50.'
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5061:     *   config: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5062:     *     tools: [{codeExecution: {}}],
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5075:     * the first one will be returned.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5076:     * If there are no code execution result in the response, undefined will be returned.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5077:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5078:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5079:     * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5080:     * const response = await ai.models.generateContent({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5081:     *   model: 'gemini-2.0-flash',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5082:     *   contents:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5083:     *     'What is the sum of the first 50 prime numbers? Generate and run code for the calculation, and make sure you get all 50.'
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5084:     *   config: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5085:     *     tools: [{codeExecution: {}}],
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5091:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5092:    get codeExecutionResult(): string | undefined;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5093:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5094:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5095:/** Content filter results for a prompt sent in the request. Note: This is sent only in the first stream chunk and only if no candidates were generated due to content violations. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5096:export declare class GenerateContentResponsePromptFeedback {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5097:    /** Output only. The reason why the prompt was blocked. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5098:    blockReason?: BlockedReason;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5099:    /** Output only. A readable message that explains the reason why the prompt was blocked. This field is not supported in Gemini API. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5100:    blockReasonMessage?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5101:    /** Output only. A list of safety ratings for the prompt. There is one rating per category. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5102:    safetyRatings?: SafetyRating[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5103:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5104:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5105:/** Usage metadata about the content generation request and response. This message provides a detailed breakdown of token usage and other relevant metrics. This data type is not supported in Gemini API. */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5106:export declare class GenerateContentResponseUsageMetadata {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5107:    /** Output only. A detailed breakdown of the token count for each modality in the cached content. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5108:    cacheTokensDetails?: ModalityTokenCount[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5109:    /** Output only. The number of tokens in the cached content that was used for this request. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5110:    cachedContentTokenCount?: number;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5111:    /** The total number of tokens in the generated candidates. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5729: *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5730: * @remarks
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5731: * Provides access to the GenAI features through either the {@link https://cloud.google.com/vertex-ai/docs/reference/rest | Gemini API}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5732: * or the {@link https://cloud.google.com/vertex-ai/docs/reference/rest | Vertex AI API}.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5733: *
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5734: * The {@link GoogleGenAIOptions.vertexai} value determines which of the API services to use.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5735: *
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5736: * When using the Gemini API, a {@link GoogleGenAIOptions.apiKey} must also be set,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5737: * when using Vertex AI {@link GoogleGenAIOptions.project} and {@link GoogleGenAIOptions.location} must also be set.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5738: *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5739: * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5740: * Initializing the SDK for using the Gemini API:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5741: * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5742: * import {GoogleGenAI} from '@google/genai';
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5743: * const ai = new GoogleGenAI({apiKey: 'GEMINI_API_KEY'});
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5744: * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5745: *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5746: * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5747: * Initializing the SDK for using the Vertex AI API:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5748: * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5749: * import {GoogleGenAI} from '@google/genai';
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5750: * const ai = new GoogleGenAI({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5751: *   vertexai: true,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5752: *   project: 'PROJECT_ID',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5753: *   location: 'PROJECT_LOCATION'
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5754: * });
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5755: * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5756: *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5757: */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5758:export declare class GoogleGenAI {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5759:    protected readonly apiClient: ApiClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5760:    private readonly apiKey?;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5761:    readonly vertexai: boolean;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5762:    private readonly apiVersion?;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5763:    private readonly httpOptions?;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5777:    private _nextGenClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5778:    private getNextGenClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5779:    get interactions(): GeminiNextGenInteractions;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5780:    get webhooks(): GeminiNextGenWebhooks;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5781:    get agents(): GeminiNextGenAgents;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5782:    constructor(options: GoogleGenAIOptions);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5783:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5784:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5785:declare type GoogleGenAIInteraction = GoogleGenAIResponseWithSdkHttpResponse<Omit<interactions.Interaction, "steps"> & {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5786:    steps: interactions.Step[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5787:}>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5788:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5789:declare type GoogleGenAIInteractionSSEEvent = interactions.InteractionSSEEvent;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5790:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5791:/**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5792: * Google Gen AI SDK's configuration options.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5793: *
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5794: * See {@link GoogleGenAI} for usage samples.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5795: */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5796:export declare interface GoogleGenAIOptions {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5797:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5798:     * Optional. Determines whether to use the Vertex AI or the Gemini API.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5799:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5800:     * @remarks
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5801:     * When true, the {@link https://cloud.google.com/vertex-ai/docs/reference/rest | Gemini Enterprise Agent Platform API} will used.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5864:     * Optional. A set of customizable configuration for HTTP requests.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5865:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5866:    httpOptions?: HttpOptions;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5867:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5868:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5869:declare interface GoogleGenAIParentClient {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5870:    isVertexAI(): boolean;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5871:    getProject(): string | undefined;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5872:    getLocation(): string | undefined;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5873:    getBaseUrl(): string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5874:    getApiVersion(): string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5875:    getDefaultHeaders?(): Record<string, string>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5876:    getAuthHeaders(url?: string): Headers | Promise<Headers>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5877:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5878:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5879:declare type GoogleGenAIRequestOptions = RequestOptions & {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5880:    timeout?: number;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5881:    maxRetries?: number;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5882:    defaultBaseURL?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5883:    fetchOptions?: Omit<RequestInit, "method" | "body">;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5884:    query?: unknown;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5885:    body?: unknown;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5886:};
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5887:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5888:declare type GoogleGenAIResponseWithSdkHttpResponse<T> = T & {
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5889:    sdkHttpResponse?: GoogleGenAISdkHttpResponse;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5890:};
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5891:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5892:declare type GoogleGenAISdkHttpResponse = {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5893:    headers?: Record<string, string>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5894:    responseInternal: Response;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5895:    json(): Promise<unknown>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5896:};
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:5897:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6754:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6755:export { Image_2 as Image }
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6756:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6757:declare type ImageConfig$ = ImageConfig_2;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6758:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6759:/** The image generation configuration to be used in GenerateContentConfig. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6760:export declare interface ImageConfig {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6761:    /** Aspect ratio of the generated images. Supported values are
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6762:     "1:1", "2:3", "3:2", "3:4", "4:3", "9:16", "16:9", and "21:9". */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6763:    aspectRatio?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:6764:    /** Optional. Specifies the size of generated images. Supported
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7065:    contents?: ContentListUnion;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7066:    /** The metadata to be associated with the request. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7067:    metadata?: Record<string, string>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7068:    /** Configuration that contains optional model parameters.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7069:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7070:    config?: GenerateContentConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7071:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7072:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7073:/** Config for `inlined_responses` parameter. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7074:export declare class InlinedResponse {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7075:    /** The response to the request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7076:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7077:    response?: GenerateContentResponse;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7078:    /** The metadata to be associated with the request. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7079:    metadata?: Record<string, string>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7080:    /** The error encountered while processing the request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7081:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:7082:    error?: JobError;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8365:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8366:     A `Tool` is a piece of code that enables the system to interact with
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8367:     external systems to perform an action, or set of actions, outside of
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8368:     knowledge and scope of the model. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8369:    tools?: ToolListUnion;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8370:    /** Configures the realtime input behavior in BidiGenerateContent. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8371:    realtimeInputConfig?: RealtimeInputConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8372:    /** Configures session resumption mechanism.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8373:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8374:     If included server will send SessionResumptionUpdate messages. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8375:    sessionResumption?: SessionResumptionConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8402:/** Client generated response to a `ToolCall` received from the server.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8403:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8404: Individual `FunctionResponse` objects are matched to the respective
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8405: `FunctionCall` objects by the `id` field.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8406:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8407: Note that in the unary and server-streaming GenerateContent APIs function
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8408: calling happens by exchanging the `Content` parts, while in the bidi
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8409: GenerateContent APIs function calling happens over this dedicated set of
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8410: messages. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8411:export declare class LiveClientToolResponse {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8412:    /** The response to the function calls. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8413:    functionResponses?: FunctionResponse[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8414:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8488:    inputAudioTranscription?: AudioTranscriptionConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8489:    /** The transcription of the output aligns with the language code
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8490:     specified for the output audio.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8491:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8492:    outputAudioTranscription?: AudioTranscriptionConfig;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8493:    /** Configures the realtime input behavior in BidiGenerateContent. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8494:    realtimeInputConfig?: RealtimeInputConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8495:    /** Configures context window compression mechanism.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8496:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8497:     If included, server will compress context window to fit into given length. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8498:    contextWindowCompression?: ContextWindowCompressionConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8960:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8961:     Note: This should not be used for when resuming a session at some time later -- in those cases partial audio and video frames are likely not needed. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8962:    lastConsumedClientMessageIndex?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8963:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8964:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8965:/** Sent in response to a `LiveGenerateContentSetup` message from the client. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8966:export declare interface LiveServerSetupComplete {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8967:    /** The session id of the live session. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8968:    sessionId?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8969:    /** Signature of the verified consent audio. This is populated when the
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:8970:     request has a ReplicatedVoiceConfig with consent_audio set, if the consent
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9327:     * Indicates the model should return video.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9328:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9329:    VIDEO = "VIDEO"
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9330:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9331:
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9332:/** Represents a breakdown of token usage by modality. This message is used in CountTokensResponse and GenerateContentResponse.UsageMetadata to provide a detailed view of how many tokens are used by each modality (e.g., text, image, video) in a request. This is particularly useful for multimodal models, allowing you to track and manage token consumption for billing and quota purposes. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9333:export declare interface ModalityTokenCount {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9334:    /** The modality that this token count applies to. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9335:    modality?: MediaModality;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9336:    /** The number of tokens counted for this modality. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9337:    tokenCount?: number;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9449:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9450:export declare class Models extends BaseModule {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9451:    private readonly apiClient;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9452:    constructor(apiClient: ApiClient);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9453:    /**
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9454:     * Calculates embeddings for the given contents.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9455:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9456:     * @param params - The parameters for embedding contents.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9457:     * @return The response from the API.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9458:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9459:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9498:     * @param params - The parameters for generating content.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9499:     * @return The response from generating content.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9500:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9501:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9502:     * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9503:     * const response = await ai.models.generateContent({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9504:     *   model: 'gemini-2.0-flash',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9505:     *   contents: 'why is the sky blue?',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9506:     *   config: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9507:     *     candidateCount: 2,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9508:     *   }
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9509:     * });
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9510:     * console.log(response);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9511:     * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9512:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9513:    generateContent: (params: types.GenerateContentParameters) => Promise<types.GenerateContentResponse>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9514:    /**
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9515:     * This logic is needed for GenerateContentConfig only.
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9516:     * Previously we made GenerateContentConfig.responseSchema field to accept
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9517:     * unknown. Since v1.9.0, we switch to use backend JSON schema support.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9518:     * To maintain backward compatibility, we move the data that was treated as
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9519:     * JSON schema from the responseSchema field to the responseJsonSchema field.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9520:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9521:    private maybeMoveToResponseJsonSchema;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9546:     * @param params - The parameters for generating content with streaming response.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9547:     * @return The response from generating content.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9548:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9549:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9550:     * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9551:     * const response = await ai.models.generateContentStream({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9552:     *   model: 'gemini-2.0-flash',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9553:     *   contents: 'why is the sky blue?',
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9554:     *   config: {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9555:     *     maxOutputTokens: 200,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9556:     *   }
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9558:     * for await (const chunk of response) {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9559:     *   console.log(chunk);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9560:     * }
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9561:     * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9562:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9563:    generateContentStream: (params: types.GenerateContentParameters) => Promise<AsyncGenerator<types.GenerateContentResponse>>;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9564:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9565:     * Transforms the CallableTools in the parameters to be simply Tools, it
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9566:     * copies the params into a new object and replaces the tools, it does not
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9567:     * modify the original params. Also sets the MCP usage header if there are
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9568:     * MCP tools in the parameters.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9657:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9658:     * console.log(operation.response?.generatedVideos?.[0]?.video?.uri);
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9659:     * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9660:     */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9661:    generateVideos: (params: types.GenerateVideosParameters) => Promise<types.GenerateVideosOperation>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9662:    private generateContentInternal;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9663:    private generateContentStreamInternal;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9664:    /**
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9665:     * Calculates embeddings for the given contents. Only text is supported.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9666:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9667:     * @param params - The parameters for embedding contents.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9668:     * @return The response from the API.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9669:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:9670:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10850:export declare interface ReinforcementTuningExample {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10851:    /** Multi-turn contents that represents the Prompt. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10852:    contents?: Content[];
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10853:    /** References for the given prompt. The key is the name of the reference, and the value is the reference itself. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10854:    references?: Record<string, string>;
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10855:    /** Corresponds to system_instruction in user-facing GenerateContentRequest. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10856:    systemInstruction?: Content;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10857:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10858:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10859:/** Hyperparameters for Reinforcement Tuning. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:10860:export declare interface ReinforcementTuningHyperParameters {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11678:     Please note that the per-request config does not change the chat level
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11679:     config, nor inherit from it. If you intend to use some values from the
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11680:     chat's default config, you must explicitly copy them into this per-request
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11681:     config.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11682:     */
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11683:    config?: GenerateContentConfig;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11684:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11685:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11686:/** Pricing and performance service tier. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11687:export declare enum ServiceTier {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11688:    /**
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11859: * updated. Base URLs provided in the HttpOptions will also take precedence over
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11860: * URLs set here.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11861: *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11862: * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11863: * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11864: * import {GoogleGenAI, setDefaultBaseUrls} from '@google/genai';
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11865: * // Override the base URL for the Gemini API.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11866: * setDefaultBaseUrls({geminiUrl:'https://gemini.google.com'});
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11867: *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11868: * // Override the base URL for the Vertex AI API.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11869: * setDefaultBaseUrls({vertexUrl: 'https://vertexai.googleapis.com'});
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11870: *
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11871: * const ai = new GoogleGenAI({apiKey: 'GEMINI_API_KEY'});
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11872: * ```
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11873: */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11874:export declare function setDefaultBaseUrls(baseUrlParams: BaseUrlParameters): void;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11875:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11876:declare type SigningSecret$ = SigningSecret;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11923:}
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11924:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11925:/** Context window will be truncated by keeping only suffix of it.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11926:
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11927: Context window will always be cut at start of USER role turn. System
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11928: instructions and `BidiGenerateContentSetup.prefix_turns` will not be
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11929: subject to the sliding window mechanism, they will always stay at the
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11930: beginning of context window. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11931:export declare interface SlidingWindow {
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11932:    /** Session reduction target -- how many tokens we should keep. Window shortening operation has some latency costs, so we should avoid running it on every turn. Should be < trigger_tokens. If not set, trigger_tokens/2 is assumed. */
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:11933:    targetTokens?: string;
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12616:     * @param params - The parameters for the create request.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12617:     * @return The created auth token.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12618:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12619:     * @example
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12620:     * ```ts
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12621:     * const ai = new GoogleGenAI({
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12622:     *     apiKey: token.name,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12623:     *     httpOptions: { apiVersion: 'v1alpha' }  // Support in v1alpha only.
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12624:     * });
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12625:     *
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:12626:     * // Case 1: If LiveEphemeralParameters is unset, unlock LiveConnectConfig
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13604:        LatLng,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13605:        RetrievalConfig,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13606:        FunctionCallingConfig,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13607:        ToolConfig,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13608:        ModelArmorConfig,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13609:        GenerateContentConfig,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13610:        GenerateContentParameters,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13611:        HttpResponse,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13612:        LiveCallbacks,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13613:        GoogleTypeDate,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13614:        Citation,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13615:        CitationMetadata,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13637:        LogprobsResult,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13638:        SafetyRating,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13639:        UrlMetadata,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13640:        UrlContextMetadata,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13641:        Candidate,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13642:        GenerateContentResponsePromptFeedback,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13643:        ModalityTokenCount,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13644:        GenerateContentResponseUsageMetadata,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13645:        ModelStatus,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13646:        GenerateContentResponse,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13647:        ReferenceImage,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13648:        EditImageParameters,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13649:        EmbedContentConfig,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13650:        EmbedContentParametersPrivate,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13651:        ContentEmbeddingStatistics,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13652:        ContentEmbedding,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13653:        EmbedContentMetadata,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13654:        EmbedContentResponse,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13655:        GenerateImagesConfig,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13656:        GenerateImagesParameters,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13868:        CreateBatchJobParameters,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13869:        BatchJobOutputInfo,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13870:        CompletionStats,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13871:        BatchJob,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13872:        EmbedContentBatch,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13873:        EmbeddingsBatchJobSource,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13874:        CreateEmbeddingsBatchJobConfig,
+> C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13875:        CreateEmbeddingsBatchJobParameters,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13876:        GetBatchJobConfig,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13877:        GetBatchJobParameters,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13878:        CancelBatchJobConfig,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13879:        CancelBatchJobParameters,
+  C:\Users\USER\Documents\DS_Med_IC\Second Brain AI\second-brain-ai-app\node_modules\@google\genai\dist\genai.d.ts:13880:        ListBatchJobsConfig,
