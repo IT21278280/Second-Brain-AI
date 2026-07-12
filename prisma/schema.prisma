@@ -1,0 +1,109 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Workspace {
+  id          String       @id @default(cuid())
+  name        String
+  slug        String       @unique
+  description String?
+  ownerId     String?
+  documents   Document[]
+  notes       Note[]
+  collections Collection[]
+  chats       Chat[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Collection {
+  id          String     @id @default(cuid())
+  name        String
+  description String?
+  workspace   Workspace  @relation(fields: [workspaceId], references: [id])
+  workspaceId String
+  documents   Document[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Note {
+  id          String     @id @default(cuid())
+  title       String
+  content     String
+  tags        String[]   @default([])
+  favorite    Boolean    @default(false)
+  archived    Boolean    @default(false)
+  workspace   Workspace  @relation(fields: [workspaceId], references: [id])
+  workspaceId String
+  userId      String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Document {
+  id             String      @id @default(cuid())
+  title          String
+  description    String?
+  originalName   String?
+  mimeType       String?
+  fileSize       Int?
+  storagePath    String
+  contentPreview String?
+  workspace      Workspace   @relation(fields: [workspaceId], references: [id])
+  workspaceId    String
+  collection     Collection? @relation(fields: [collectionId], references: [id])
+  collectionId   String?
+  userId         String
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  chunks         Chunk[]
+}
+
+model Chat {
+  id           String     @id @default(cuid())
+  title        String
+  model        String?
+  temperature  Float?
+  systemPrompt String?
+  workspace    Workspace  @relation(fields: [workspaceId], references: [id])
+  workspaceId  String
+  userId       String?
+  messages     Message[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  chat       Chat     @relation(fields: [chatId], references: [id])
+  chatId     String
+  role       String
+  content    String
+  references Json?
+  tokens     Int?
+  latencyMs  Int?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Chunk {
+  id         String   @id @default(cuid())
+  document   Document @relation(fields: [documentId], references: [id])
+  documentId String
+  content    String
+  metadata   Json?
+  embedding  Bytes
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
