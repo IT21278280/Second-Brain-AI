@@ -21,11 +21,11 @@ export default function SettingsPage() {
             <CardContent className="space-y-4">
               <div>
                 <label className="mb-2 block text-sm font-medium text-slate-700">Name</label>
-                <Input defaultValue="Maya Chen" />
+                <Input defaultValue="Rusith Fdo" />
               </div>
               <div>
                 <label className="mb-2 block text-sm font-medium text-slate-700">Email</label>
-                <Input defaultValue="maya@secondbrain.ai" />
+                <Input defaultValue="rusith@secondbrain.ai" />
               </div>
               <div>
                 <label className="mb-2 block text-sm font-medium text-slate-700">Workspace</label>

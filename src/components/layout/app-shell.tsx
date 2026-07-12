@@ -53,7 +53,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </Button>
             <Button variant="outline" className="hidden md:flex">
               <UserCircle2 className="mr-2 h-4 w-4" />
-              Maya Chen
+              Rusith Fdo
             </Button>
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
               <Menu className="h-4 w-4" />

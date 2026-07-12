@@ -194,6 +194,36 @@ Planned improvements include:
 - better versioning and note history
 - admin controls, analytics, and billing workflows
 
+## Screenshots
+
+Below is a preview of the current UI screens captured from the app:
+
+- **Home**
+- **Dashboard**
+- **AI Chat**
+- **Search**
+- **Collections**
+- **Documents**
+- **Notes**
+- **Settings**
+
+<p align="center">
+  <img src="./screenshots/Home.jpeg" alt="Home screen" width="320" />
+  <img src="./screenshots/Dashboard.jpeg" alt="Dashboard screen" width="320" />
+  <img src="./screenshots/AI Chat.jpeg" alt="AI Chat screen" width="320" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/Search.jpeg" alt="Search screen" width="320" />
+  <img src="./screenshots/Collections.jpeg" alt="Collections screen" width="320" />
+  <img src="./screenshots/Documents.jpeg" alt="Documents screen" width="320" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/Notes.jpeg" alt="Notes screen" width="320" />
+  <img src="./screenshots/Settings.jpeg" alt="Settings screen" width="320" />
+</p>
+
 ## Contributing
 
 Contributions are welcome. A good workflow is:

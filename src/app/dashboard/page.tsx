@@ -29,7 +29,7 @@ export default function DashboardPage() {
               <div className="max-w-2xl">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-sm">
                   <Sparkles className="h-4 w-4" />
-                  Welcome back, Maya
+                  Welcome back, Rusith!
                 </div>
                 <h1 className="text-3xl font-semibold tracking-tight">Your second brain is ready for the next breakthrough.</h1>
                 <p className="mt-3 text-sm text-indigo-50">
@@ -37,20 +37,16 @@ export default function DashboardPage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Link href="/documents" legacyBehavior>
-                  <Button asChild variant="secondary" className="bg-white text-indigo-700 hover:bg-indigo-50">
-                    <a>
-                      <FileText className="mr-2 h-4 w-4" /> Upload document
-                    </a>
-                  </Button>
-                </Link>
-                <Link href="/notes" legacyBehavior>
-                  <Button asChild variant="outline" className="border-white/40 bg-white/10 text-white hover:bg-white/20">
-                    <a>
-                      <NotebookPen className="mr-2 h-4 w-4" /> New note
-                    </a>
-                  </Button>
-                </Link>
+                <Button asChild variant="secondary" className="bg-white text-indigo-700 hover:bg-indigo-50">
+                  <Link href="/documents" className="inline-flex items-center">
+                    <FileText className="mr-2 h-4 w-4" /> Upload document
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="border-white/40 bg-white/10 text-white hover:bg-white/20">
+                  <Link href="/notes" className="inline-flex items-center">
+                    <NotebookPen className="mr-2 h-4 w-4" /> New note
+                  </Link>
+                </Button>
               </div>
             </div>
           </CardContent>
@@ -103,20 +99,16 @@ export default function DashboardPage() {
                 <CardDescription>Jump into your most common tasks.</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-3">
-                <Link href="/documents" legacyBehavior>
-                  <Button asChild className="justify-start">
-                    <a>
-                      <FileText className="mr-2 h-4 w-4" />Upload document
-                    </a>
-                  </Button>
-                </Link>
-                <Link href="/notes" legacyBehavior>
-                  <Button asChild variant="outline" className="justify-start">
-                    <a>
-                      <NotebookPen className="mr-2 h-4 w-4" />Create note
-                    </a>
-                  </Button>
-                </Link>
+                <Button asChild className="justify-start">
+                  <Link href="/documents" className="inline-flex items-center">
+                    <FileText className="mr-2 h-4 w-4" />Upload document
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="justify-start">
+                  <Link href="/notes" className="inline-flex items-center">
+                    <NotebookPen className="mr-2 h-4 w-4" />Create note
+                  </Link>
+                </Button>
                 <Button variant="outline" className="justify-start"><Bot className="mr-2 h-4 w-4" />Start chat</Button>
                 <Button variant="outline" className="justify-start"><Layers className="mr-2 h-4 w-4" />Create collection</Button>
               </CardContent>
