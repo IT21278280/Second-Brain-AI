@@ -1,0 +1,1 @@
+This is a test document. It contains content for text retrieval. The model should return relevant chunks in semantic search.
