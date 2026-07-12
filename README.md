@@ -212,17 +212,20 @@ Below is a preview of the current UI screens captured from the app:
   <img src="./screenshots/Dashboard.jpeg" alt="Dashboard screen" width="320" />
   <img src="./screenshots/AI Chat.jpeg" alt="AI Chat screen" width="320" />
 </p>
+<p align="center"><em>Home dashboard, workspace overview, and AI chat experience.</em></p>
 
 <p align="center">
   <img src="./screenshots/Search.jpeg" alt="Search screen" width="320" />
   <img src="./screenshots/Collections.jpeg" alt="Collections screen" width="320" />
   <img src="./screenshots/Documents.jpeg" alt="Documents screen" width="320" />
 </p>
+<p align="center"><em>Semantic search, organized collections, and document upload/indexing.</em></p>
 
 <p align="center">
   <img src="./screenshots/Notes.jpeg" alt="Notes screen" width="320" />
   <img src="./screenshots/Settings.jpeg" alt="Settings screen" width="320" />
 </p>
+<p align="center"><em>Note creation workflow and user/workspace settings.</em></p>
 
 ## Contributing
 
